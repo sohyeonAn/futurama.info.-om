@@ -6,35 +6,37 @@ export const MEDIA_QUERY_END_POINT = {
   DESKTOP: '1920px',
 };
 
+const ROUTE = '/futurama';
+
 export const ROUTES = [
   {
-    ID: 0,
-    PATH: '/cast',
-    LABEL: 'cast',
+    ID: 1,
+    PATH: ROUTE + '/info',
+    LABEL: 'info',
   },
   {
     ID: 1,
-    PATH: '/character',
+    PATH: ROUTE + '/character',
     LABEL: 'character',
   },
   {
     ID: 2,
-    PATH: '/episodes',
-    LABEL: 'episodes',
+    PATH: ROUTE + '/cast',
+    LABEL: 'cast',
   },
   {
     ID: 3,
-    PATH: '/info',
-    LABEL: 'info',
+    PATH: ROUTE + '/episodes',
+    LABEL: 'episodes',
   },
   {
     ID: 4,
-    PATH: '/inventory',
+    PATH: ROUTE + '/inventory',
     LABEL: 'inventory',
   },
   {
     ID: 5,
-    PATH: '/questions',
+    PATH: ROUTE + '/questions',
     LABEL: 'questions',
   }
 ];
