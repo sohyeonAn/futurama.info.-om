@@ -3,7 +3,6 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import { Error, Loading } from "../../components/index";
 import { useFuturamaData } from "../../hooks/useFuturamaData";
-import { Questions } from "../../types/Futurama";
 
 const QuestionsPage: NextPage = () => {
   const category = 'questions';
@@ -13,9 +12,7 @@ const QuestionsPage: NextPage = () => {
   if (error) return <Error />
   if (!data) return <Loading />
   
-  function choiceButtonHandler(e: React.MouseEvent<HTMLElement>, choice: string){
-    const clickedBtn= e.target;
-
+  function choiceButtonHandler(choice: string){
     if(choice == data[quizIdx].correctAnswer){
       alert('Correct!!!');
       setQuizIdx(quizIdx + 1);
@@ -47,7 +44,7 @@ const QuestionsPage: NextPage = () => {
                     key={`${category}-${data.id}-${index + 1}`}
                     type="button" 
                     className="choiceBtn"
-                    onClick={(e) => choiceButtonHandler(e, choice)}>
+                    onClick={(e) => choiceButtonHandler(choice)}>
                     {index + 1}. {choice}
                   </button>
               );
