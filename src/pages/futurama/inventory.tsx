@@ -20,10 +20,10 @@ const InventoryPage: NextPage = () => {
             <Card key={`${category}-${inven.id}`}>
               <h3>{inven.title}</h3>
               <p>{inven.description}</p>
-              <p>slogan: {inven.slogan}</p>
+              <p>{inven.slogan ? `slogan: ${inven.slogan}` : ''}</p>
               <p>price: {inven.price}</p>
               <p>stock: {inven.stock}</p>
-              <p>{inven.category}</p>
+              <p>category: {inven.category}</p>
             </Card>
           );
         })}
@@ -54,21 +54,10 @@ const ContentContainer = styled.div`
 
 const Card = styled.div`
   position: relative;
-  padding: .5em .5em 0;
+  display: block;
+  padding: 0 .5em;
   border-radius: 4px;
   text-align: center;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
   margin: 0;
-
-  p:last-of-type{
-    display: block;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    padding: 0.3em;
-    border-top: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: #b9d5dd;
-  }
 `

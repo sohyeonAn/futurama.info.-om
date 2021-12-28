@@ -19,12 +19,12 @@ const InfoPage: NextPage = () => {
         <h3>About Futurama</h3>
       {data.map((info: Info) => {
         return (
-          <Card key={`${category}-${data.id}`}>
+          <Card key={`${category}-${info.id}`}>
             <p>{info.synopsis}</p>
             <p>{info.yearsAired}</p>
             {info.creators.map(({name, url})=>{
               return (
-                <div key={`${category}-${data.id}-creators`}>
+                <div key={`${category}-${info.id}-${name}`}>
                   <Link href={url}>
                     <a>{name}</a>
                   </Link>

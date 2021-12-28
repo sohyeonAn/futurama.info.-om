@@ -18,7 +18,7 @@ const CastPage: NextPage = () => {
       <ContentContainer>
       {data.map((cast: Cast) => {
         return (
-          <Card key={`${category}-${data.id}`}>
+          <Card key={`${category}-${cast.id}`}>
             <Link href={cast.bio.url}>
               <a>
                 <h2>{cast.name}</h2>

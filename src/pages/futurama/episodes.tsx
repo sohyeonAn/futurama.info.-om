@@ -17,7 +17,7 @@ const EpisodesPage: NextPage = () => {
       <ContentContainer>
       {data.map((episode: Episodes) => {
         return (
-          <Card key={`${category}-${data.id}`}>
+          <Card key={`${category}-${episode.id}`}>
             <p>Episode {episode.number}</p>
             <h3>{episode.title}</h3>
             <p>{episode.desc}</p>
@@ -49,7 +49,7 @@ const ContentContainer = styled.div`
 `
 
 const Card = styled.div`
-  padding: .5em;
+  padding: 1em;
   border-radius: 4px;
   text-align: center;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
