@@ -119,5 +119,9 @@ const ChoiceContainer = styled.div`
     font-size: 1em;
     line-height: 2em;
     cursor: pointer;
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 `
