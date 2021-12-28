@@ -20,15 +20,14 @@ const QuestionsPage: NextPage = () => {
       alert('Correct!!!');
       setQuizIdx(quizIdx + 1);
 
-      if(quizIdx == data.length - 1){
+      // if(quizIdx == data.length - 1){
+      if(quizIdx == 1){
+        const resultCont = document.querySelector('.cont-result');
         setQuizIdx(0);
       }
     } else{
       alert('Umm..try again!');
     }
-    console.log(clickedBtn);
-    console.log(choice);
-    console.log(quizIdx);
   }
 
   return (
@@ -36,6 +35,10 @@ const QuestionsPage: NextPage = () => {
       <Title>{category.toUpperCase()}</Title>
       <div>
         <QuizTxt>Let&apos;s start with a Quiz!</QuizTxt>
+        <ProgressBox>
+          <div style={{width: `${(quizIdx+1)/data.length * 100}%`}}></div>
+        </ProgressBox>
+        <ProgressTxt>{quizIdx+1}/{data.length}</ProgressTxt>
         <Card>
           <p>{quizIdx+1}. {data[quizIdx].question}</p>
           <ChoiceContainer>
@@ -62,6 +65,7 @@ const QuestionsPage: NextPage = () => {
 
 export default QuestionsPage;
 
+
 const Title = styled.h2`
   position: sticky;
   top: 0;
@@ -72,13 +76,24 @@ const Title = styled.h2`
   background-color: #b01317;
   color: white;
 `
-const ContentContainer = styled.div`
-  padding: 1.5em;
-  display: grid;
-  gap: 1em;
-  grid-template-columns: repeat(4, 1fr);
+
+const ProgressBox = styled.div`
+  margin: 0 auto;
+  background-color: rgb(233, 233, 233);
+  border-radius: .5rem;
+  width: 70%;
+
+  div {
+    background-color: rgb(62, 122, 235);
+    height: 10px;
+    border-radius: 1rem;
+  }
 `
 
+const ProgressTxt = styled.p`
+  display: block;
+  text-align: center;
+`
 const Card = styled.div`
   margin: 0 auto;
   width: 80%;
