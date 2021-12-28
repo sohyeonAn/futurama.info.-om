@@ -35,7 +35,7 @@ const QuestionsPage: NextPage = () => {
     <div>
       <Title>{category.toUpperCase()}</Title>
       <div>
-        <QuizTxt>Let's start with a Quiz!</QuizTxt>
+        <QuizTxt>Let&apos;s start with a Quiz!</QuizTxt>
         <Card>
           <p>{quizIdx+1}. {data[quizIdx].question}</p>
           <ChoiceContainer>
