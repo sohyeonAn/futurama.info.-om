@@ -20,9 +20,7 @@ const QuestionsPage: NextPage = () => {
       alert('Correct!!!');
       setQuizIdx(quizIdx + 1);
 
-      // if(quizIdx == data.length - 1){
-      if(quizIdx == 1){
-        const resultCont = document.querySelector('.cont-result');
+      if(quizIdx == data.length - 1){
         setQuizIdx(0);
       }
     } else{
